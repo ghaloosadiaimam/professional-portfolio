@@ -1,0 +1,72 @@
+:root {
+  --ink: #14213d;
+  --muted: #55607a;
+  --accent: #0b3d91;
+  --bg: #fbfcfe;
+  --panel: #eef3fb;
+  --line: #d5deee;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #e8edf8; --muted: #aab6d0; --accent: #8fb4ff; --bg: #0e1628; --panel: #16213a; --line: #28375a; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { margin: 0; font-family: Georgia, "Times New Roman", serif; line-height: 1.7; color: var(--ink); background: var(--bg); }
+h1, h2, h3, nav, .btn, .meta, dt, .src { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+img { max-width: 100%; height: auto; }
+
+.top { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; width: min(1000px, 92%); margin: auto; padding: .75rem 0; }
+.brand { font-weight: 700; text-decoration: none; color: var(--ink); }
+nav ul { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; list-style: none; margin: 0; padding: 0; }
+nav ul a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+nav ul a:hover { color: var(--accent); }
+
+main { width: min(1000px, 92%); margin: auto; }
+section { padding: 3.5rem 0; border-bottom: 1px solid var(--line); }
+section > * { max-width: 70ch; }
+h2 { font-size: 1.6rem; margin: 0 0 1rem; color: var(--accent); }
+h3 { font-size: 1.1rem; margin: 0 0 .4rem; }
+
+.hero { padding: 4.5rem 0 3.5rem; }
+h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); line-height: 1.05; margin: 0 0 .75rem; letter-spacing: -.02em; }
+.role { font-family: system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--accent); margin: 0 0 1rem; }
+.lead { font-size: 1.15rem; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; max-width: none; }
+.btn { display: inline-block; padding: .65rem 1.2rem; border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 600; color: var(--accent); }
+.btn:hover { background: var(--panel); }
+.btn.primary { background: var(--accent); color: var(--bg); }
+.btn.primary:hover { opacity: .9; background: var(--accent); }
+
+.skills, .projects { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); max-width: none; }
+.skills > div, .projects article { padding: 1.25rem; background: var(--panel); border-left: 4px solid var(--accent); }
+.skills p { margin: 0 0 .5rem; }
+.src, .meta { font-size: .85rem; color: var(--muted); margin: 0; }
+.meta { margin-bottom: .75rem; }
+dl { margin: 0; }
+dt { font-weight: 700; font-size: .85rem; color: var(--accent); margin-top: .6rem; }
+dd { margin: 0; }
+
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li { padding: .6rem 0 .6rem 1rem; border-left: 4px solid var(--accent); margin-bottom: .75rem; }
+.timeline strong { display: block; font-family: system-ui, sans-serif; }
+.timeline span { color: var(--muted); }
+
+#contact { border-bottom: 0; }
+footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.intro { color: var(--muted); }
+.certs { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); max-width: none; }
+.cert { background: var(--panel); border-top: 4px solid var(--accent); display: flex; flex-direction: column; }
+.cert .thumb { display: block; aspect-ratio: 4 / 3; background: #fff; }
+.cert img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cert div { padding: .9rem 1rem 1rem; }
+.cert h3 { font-size: 1rem; }
+.cert p { margin: 0 0 .4rem; font-size: .9rem; color: var(--muted); }
+.cert .links a { margin-right: .9rem; font-family: system-ui, sans-serif; font-weight: 600; }
+.design figure { margin: 0; max-width: 640px; }
+.design img { width: 100%; height: auto; border: 1px solid var(--line); display: block; }
+.design figcaption { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
